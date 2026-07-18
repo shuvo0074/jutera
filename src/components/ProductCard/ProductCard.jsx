@@ -30,7 +30,7 @@ export default function ProductCard({ product, index = 0 }) {
           </p>
           <button
             type="button"
-            onClick={() => scrollToId('contact')}
+            onClick={() => scrollToId('gallery')}
             className="group/link mt-1 inline-flex w-fit items-center gap-2 text-sm font-semibold text-accent"
           >
             <span className="relative">
