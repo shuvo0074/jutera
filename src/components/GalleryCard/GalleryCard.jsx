@@ -1,15 +1,9 @@
-import { motion } from 'framer-motion'
-
-export default function GalleryCard({ image, onClick, index = 0 }) {
+export default function GalleryCard({ image, onClick }) {
   return (
-    <motion.button
+    <button
       type="button"
       onClick={onClick}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.6, delay: Math.min(index * 0.04, 0.28), ease: [0.22, 1, 0.36, 1] }}
-      className="group relative mb-0 block w-full overflow-hidden rounded-2xl shadow-[var(--shadow-soft)] focus-visible:outline-none"
+      className="gallery-card group relative mb-0 block w-full overflow-hidden rounded-2xl shadow-[var(--shadow-soft)] focus-visible:outline-none"
       aria-label={`Open gallery image: ${image.alt}`}
     >
       <img
@@ -25,6 +19,6 @@ export default function GalleryCard({ image, onClick, index = 0 }) {
       <span className="absolute bottom-4 left-4 translate-y-2 rounded-full bg-bg-primary/90 px-3 py-1 text-xs font-semibold text-text-primary opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         View
       </span>
-    </motion.button>
+    </button>
   )
 }

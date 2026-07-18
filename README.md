@@ -10,7 +10,7 @@ Scandinavian-inspired, minimal, and built for wholesale / OEM outreach across Eu
 - React Router
 - Tailwind CSS v4
 - Framer Motion (site-wide motion)
-- GSAP + ScrollTrigger (hero parallax & reveal only)
+- GSAP + ScrollTrigger (hero parallax/reveal + gallery batch reveals with Lenis)
 - Lenis (smooth scrolling)
 
 ## Develop
