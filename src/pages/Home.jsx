@@ -1,5 +1,6 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useRef } from 'react'
 import Hero from '../components/Hero/Hero'
+import JuteLeafClusters from '../components/JuteLeafClusters/JuteLeafClusters'
 import PageTransition from '../components/PageTransition/PageTransition'
 
 const About = lazy(() => import('../components/sections/About'))
@@ -18,17 +19,26 @@ function SectionFallback() {
 }
 
 export default function Home() {
+  const contentRef = useRef(null)
+
   return (
     <PageTransition>
       <Hero />
-      <Suspense fallback={<SectionFallback />}>
-        <About />
-        <Products />
-        <WhyChoose />
-        <Sustainability />
-        <Gallery />
-        <Contact />
-      </Suspense>
+      <div ref={contentRef} className="relative isolate">
+        {/* Background layer — behind every section, card, and control */}
+        <JuteLeafClusters containerRef={contentRef} />
+
+        <div className="relative z-10">
+          <Suspense fallback={<SectionFallback />}>
+            <About />
+            <Products />
+            <WhyChoose />
+            <Sustainability />
+            <Gallery />
+            <Contact />
+          </Suspense>
+        </div>
+      </div>
     </PageTransition>
   )
 }

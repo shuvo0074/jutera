@@ -6,7 +6,7 @@ export default function ProductCard({ product, index = 0 }) {
   return (
     <AnimationWrapper delay={Math.min(index * 0.06, 0.36)} className="h-full">
       <motion.article
-        className="group flex h-full flex-col overflow-hidden rounded-[1.25rem] bg-white/55 shadow-[var(--shadow-soft)] ring-1 ring-text-primary/5 backdrop-blur-sm transition-shadow duration-500 hover:shadow-[var(--shadow-lift)]"
+        className="group relative z-10 flex h-full flex-col overflow-hidden rounded-[1.25rem] bg-bg-primary/85 shadow-[var(--shadow-soft)] ring-1 ring-text-primary/5 backdrop-blur-sm transition-shadow duration-500 hover:shadow-[var(--shadow-lift)]"
         whileHover={{ y: -6 }}
         transition={{ type: 'spring', stiffness: 280, damping: 22 }}
       >

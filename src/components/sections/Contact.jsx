@@ -11,7 +11,7 @@ const socials = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden py-20 md:py-28">
+    <section id="contact" className="relative py-20 md:py-28">
       <div
         aria-hidden
         className="organic-blob pointer-events-none absolute -bottom-24 left-1/2 h-80 w-80 -translate-x-1/2 bg-jute/10 blur-2xl"

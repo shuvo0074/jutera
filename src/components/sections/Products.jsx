@@ -4,7 +4,7 @@ import { products } from '../../data/products'
 
 export default function Products() {
   return (
-    <section id="products" className="bg-bg-secondary/60 py-20 texture-linen md:py-28">
+    <section id="products" className="bg-transparent py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionTitle
           eyebrow="Collection"

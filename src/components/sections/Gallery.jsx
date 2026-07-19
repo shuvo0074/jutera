@@ -91,7 +91,7 @@ export default function Gallery() {
     <section
       id="gallery"
       ref={sectionRef}
-      className="bg-bg-secondary/50 py-20 md:py-28"
+      className="bg-transparent py-20 md:py-28"
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionTitle

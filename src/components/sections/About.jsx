@@ -42,7 +42,7 @@ function Counter({ value, suffix }) {
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden py-20 md:py-28">
+    <section id="about" className="relative py-20 md:py-28">
       <div
         aria-hidden
         className="organic-blob pointer-events-none absolute -left-32 top-20 h-72 w-72 bg-jute/10 blur-2xl"

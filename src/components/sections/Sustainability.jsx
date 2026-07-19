@@ -6,7 +6,7 @@ import { scrollToId } from '../../hooks/useSmoothScroll'
 
 export default function Sustainability() {
   return (
-    <section id="sustainability" className="relative overflow-hidden py-20 md:py-28">
+    <section id="sustainability" className="relative py-20 md:py-28">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-accent/5 to-transparent"
