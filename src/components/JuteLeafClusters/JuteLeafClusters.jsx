@@ -96,14 +96,17 @@ function JuteLeaf({ scale = 1, opacity = 0.88 }) {
 
 /** Alternate jute shoot — stem with petiolate leaves at clear axils */
 function LeafCluster({ className, mirror = false }) {
+  // SVG Y grows downward. Leaf geometry grows along +X.
+  // Up along the stem = -90°. Keep a 40° angle from the stem, tips toward the apex.
+  const fromStem = 40
   const leaves = [
-    { y: 52, side: -1, angle: -18, scale: 0.95, opacity: 0.9 },
-    { y: 98, side: 1, angle: 16, scale: 1, opacity: 0.88 },
-    { y: 148, side: -1, angle: -22, scale: 1.05, opacity: 0.86 },
-    { y: 198, side: 1, angle: 20, scale: 1.08, opacity: 0.84 },
-    { y: 250, side: -1, angle: -15, scale: 0.98, opacity: 0.8 },
-    { y: 300, side: 1, angle: 18, scale: 0.92, opacity: 0.76 },
-    { y: 348, side: -1, angle: -12, scale: 0.82, opacity: 0.7 },
+    { y: 52, side: -1, scale: 0.95, opacity: 0.9 },
+    { y: 98, side: 1, scale: 1, opacity: 0.88 },
+    { y: 148, side: -1, scale: 1.05, opacity: 0.86 },
+    { y: 198, side: 1, scale: 1.08, opacity: 0.84 },
+    { y: 250, side: -1, scale: 0.98, opacity: 0.8 },
+    { y: 300, side: 1, scale: 0.92, opacity: 0.76 },
+    { y: 348, side: -1, scale: 0.82, opacity: 0.7 },
   ]
 
   return (
@@ -134,14 +137,15 @@ function LeafCluster({ className, mirror = false }) {
         opacity="0.18"
       />
 
-      {leaves.map((leaf, i) => (
-        <g
-          key={i}
-          transform={`translate(160 ${leaf.y}) rotate(${leaf.side < 0 ? 180 + leaf.angle : leaf.angle})`}
-        >
-          <JuteLeaf scale={leaf.scale} opacity={leaf.opacity} />
-        </g>
-      ))}
+      {leaves.map((leaf, i) => {
+        // Right: -90 + 40 = -50 (up & out). Left: -90 - 40 = -130 (up & out).
+        const rotation = leaf.side < 0 ? -90 - fromStem : -90 + fromStem
+        return (
+          <g key={i} transform={`translate(160 ${leaf.y}) rotate(${rotation})`}>
+            <JuteLeaf scale={leaf.scale} opacity={leaf.opacity} />
+          </g>
+        )
+      })}
 
       {/* Growing tip */}
       <g transform="translate(160 22)" opacity="0.75">
