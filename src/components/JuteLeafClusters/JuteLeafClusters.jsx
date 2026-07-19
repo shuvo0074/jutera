@@ -202,6 +202,31 @@ const rightClusters = [
   },
 ]
 
+const middleClusters = [
+  {
+    id: 'mid-1',
+    top: '22%',
+    left: '38%',
+    size: 'w-[180px] lg:w-[280px]',
+    yRange: [60, -320],
+    xRange: [-30, 40],
+    rotateRange: [-10, 8],
+    float: { x: [-10, 12, -10], y: [0, -14, 0], rotate: [-3, 4, -3], duration: 18, delay: 0.8 },
+    mirror: false,
+  },
+  {
+    id: 'mid-2',
+    top: '55%',
+    left: '52%',
+    size: 'w-[160px] lg:w-[250px]',
+    yRange: [-40, 360],
+    xRange: [25, -35],
+    rotateRange: [8, -10],
+    float: { x: [12, -14, 12], y: [0, 12, 0], rotate: [4, -5, 4], duration: 21, delay: 1.8 },
+    mirror: true,
+  },
+]
+
 function ScrollCluster({ cluster, mirror, progress, reduceMotion }) {
   const y = useTransform(progress, [0, 1], cluster.yRange)
   const x = useTransform(progress, [0, 1], cluster.xRange)
@@ -216,9 +241,10 @@ function ScrollCluster({ cluster, mirror, progress, reduceMotion }) {
       className={`absolute ${cluster.size}`}
       style={
         reduceMotion
-          ? { top: cluster.top }
+          ? { top: cluster.top, ...(cluster.left != null ? { left: cluster.left } : {}) }
           : {
               top: cluster.top,
+              ...(cluster.left != null ? { left: cluster.left } : {}),
               y: springY,
               x: springX,
               rotate: springRotate,
@@ -297,6 +323,19 @@ export default function JuteLeafClusters({ containerRef }) {
               key={cluster.id}
               cluster={cluster}
               mirror
+              progress={progress}
+              reduceMotion={reduceMotion}
+            />
+          ))}
+        </div>
+
+        {/* Center clusters — quieter so content stays primary */}
+        <div className="absolute inset-0 opacity-65">
+          {middleClusters.map((cluster) => (
+            <ScrollCluster
+              key={cluster.id}
+              cluster={cluster}
+              mirror={cluster.mirror}
               progress={progress}
               reduceMotion={reduceMotion}
             />
