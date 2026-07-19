@@ -72,7 +72,7 @@ export default function About() {
             <div className="relative">
               <div className="overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-lift)]">
                 <img
-                  src="/images/about.jpg"
+                  src="/images/about.png"
                   alt="Artisan arranging natural fiber goods in a calm workshop setting"
                   loading="lazy"
                   decoding="async"
