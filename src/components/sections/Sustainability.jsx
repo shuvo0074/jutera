@@ -19,7 +19,7 @@ export default function Sustainability() {
               <div className="organic-blob absolute -inset-4 bg-beige/60 blur-xl" aria-hidden />
               <div className="relative overflow-hidden rounded-[2rem] shadow-[var(--shadow-lift)]">
                 <img
-                  src="/images/sustain.jpg"
+                  src="/images/sustain.webp"
                   alt="Soft sunlight through a natural forest canopy"
                   loading="lazy"
                   decoding="async"

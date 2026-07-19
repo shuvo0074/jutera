@@ -3,7 +3,7 @@ import Button from '../Button/Button'
 import FloatingLeaves from '../FloatingLeaves/FloatingLeaves'
 import { scrollToId } from '../../hooks/useSmoothScroll'
 
-const HERO_IMAGE = '/images/hero.png'
+const HERO_IMAGE = '/images/hero.webp'
 
 export default function Hero() {
   const sectionRef = useRef(null)

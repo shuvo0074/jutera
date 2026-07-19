@@ -11,6 +11,9 @@ export default function GalleryCard({ image, onClick }) {
         alt={image.alt}
         loading="lazy"
         decoding="async"
+        width={1000}
+        height={image.tall ? 1333 : 750}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
           image.tall ? 'aspect-[3/4]' : 'aspect-[4/3]'
         }`}

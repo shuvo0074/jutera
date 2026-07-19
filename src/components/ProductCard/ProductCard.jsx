@@ -16,6 +16,9 @@ export default function ProductCard({ product, index = 0 }) {
             alt={product.title}
             loading="lazy"
             decoding="async"
+            width={900}
+            height={675}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-text-primary/20 via-transparent to-transparent opacity-60" />

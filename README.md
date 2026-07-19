@@ -60,5 +60,5 @@ public/images/  # Local lifestyle photography
 ## Notes
 
 - Contact form validates and simulates submission (showcase only).
-- Images live in `public/images/` for fast, reliable loading.
+- Site images are optimized WebP in `public/images/` (~3MB total). To refresh after adding PNG/JPG sources: `npm run optimize:images`
 - SEO meta tags, Open Graph, Twitter Cards, and Organization schema are in `index.html`.
