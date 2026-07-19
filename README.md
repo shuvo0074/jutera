@@ -27,6 +27,24 @@ npm run build
 npm run preview
 ```
 
+## Deploy (Netlify)
+
+Configured via `netlify.toml` (`npm run build` → publish `dist`).
+
+1. Push this repo to GitHub/GitLab/Bitbucket
+2. In [Netlify](https://app.netlify.com): **Add new site → Import an existing project**
+3. Select the repo — build settings are read from `netlify.toml`
+4. Deploy (optional: set custom domain, e.g. `jutera.com`)
+
+CLI alternative:
+
+```bash
+npm i -g netlify-cli
+netlify login
+netlify init
+netlify deploy --prod
+```
+
 ## Structure
 
 ```
