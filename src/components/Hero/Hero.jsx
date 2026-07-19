@@ -3,7 +3,7 @@ import Button from '../Button/Button'
 import FloatingLeaves from '../FloatingLeaves/FloatingLeaves'
 import { scrollToId } from '../../hooks/useSmoothScroll'
 
-const HERO_IMAGE = '/images/hero.jpg'
+const HERO_IMAGE = '/images/hero.png'
 
 export default function Hero() {
   const sectionRef = useRef(null)
@@ -42,8 +42,8 @@ export default function Hero() {
           defaults: { ease: 'power3.out' },
         })
 
-        tl.from(imageRef.current, { scale: 1.12, duration: 2.2, ease: 'power2.out' }, 0)
-          .from(overlayRef.current, { opacity: 0.35, duration: 1.2 }, 0.15)
+        tl.from(imageRef.current, { scale: 1.08, duration: 2.2, ease: 'power2.out' }, 0)
+          .from(overlayRef.current, { opacity: 0.8, duration: 1.2 }, 0.15)
           .from(brandRef.current, { opacity: 0, y: 36, duration: 0.9 }, 0.35)
           .from(line1Ref.current, { opacity: 0, y: 36, duration: 0.9 }, 0.5)
           .from(line2Ref.current, { opacity: 0, y: 36, duration: 0.9 }, 0.62)
@@ -90,19 +90,20 @@ export default function Hero() {
       className="relative flex min-h-[100svh] items-end overflow-hidden"
       aria-label="Hero"
     >
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden bg-bg-primary">
         <img
           ref={imageRef}
           src={HERO_IMAGE}
           alt="Bright Scandinavian living space with natural textures and soft earth tones"
-          className="h-[120%] w-full object-cover will-change-transform"
+          className="h-[120%] w-full object-cover object-center will-change-transform"
           fetchPriority="high"
         />
+        {/* Very light washes — keep the photo crisp */}
         <div
           ref={overlayRef}
-          className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/55 to-bg-primary/15"
+          className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-bg-primary/12 to-transparent"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/50 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/18 via-transparent to-transparent" />
       </div>
 
       <FloatingLeaves />
