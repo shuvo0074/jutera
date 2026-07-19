@@ -114,7 +114,7 @@ export default function Hero() {
       >
         <p
           ref={brandRef}
-          className="mb-5 font-display text-4xl tracking-[0.08em] text-text-primary sm:text-5xl md:text-6xl"
+          className="mb-5 font-display text-5xl font-semibold tracking-[0.14em] text-accent sm:text-6xl md:text-7xl"
         >
           JUTERA
         </p>
